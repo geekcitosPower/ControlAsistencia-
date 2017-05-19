@@ -15,6 +15,21 @@ class Trabajador
     private $numTrabajador;
     private $genero;
     //private $hora;
+    private $id_usuario;
+    
+     public function getid_usuario()
+    {
+        return $this->idTrabajador;
+    }
+    
+     public function setId_usuario($id_usuarior)
+    {
+        $this->idTrabajador =$id_usuario;
+    }
+
+    
+    
+   
 
 
     /**
