@@ -16,3 +16,11 @@ CREATE TABLE Trabajador(
   genero VARCHAR (10),
   constraint fk_id_usuario foreign key (id_usuario) references Usuario(id_usuario)
 );
+
+CREATE TABLE Voto(
+  idVotos integer primary key auto_increment,
+  idTrabajador INTEGER,
+  asistencia BIT,
+  hora CHAR(5),
+  constraint fk_idTrabajador foreign key (idTrabajador) references Trabajador(idTrabajador)
+);
