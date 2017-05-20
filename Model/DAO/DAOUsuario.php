@@ -9,7 +9,7 @@
 interface DAOUsuario
 {
     //lo que debe de hacer el usuario
-    public function login(Trabajador $trabajador);
-    public function registroTrabajadores(Usuario $usuario);
+    public function login(Usuario $usuario );
+    public function registroTrabajadores(Trabajador $trabajador);
     public function validarVoto(Voto $voto);
 }

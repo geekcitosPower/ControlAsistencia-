@@ -9,13 +9,13 @@
 class DAOUsuarioImp implements DAOUsuario
 {
 
-    public function login(Trabajador $trabajador)
+    public function login( Usuario $usuario)
     {
         // TODO: Implement login() method.
 
     }
 
-    public function registroTrabajadores(Usuario $usuario)
+    public function registroTrabajadores(Trabajador $trabajador)
     {
         // TODO: Implement registroTrabajadores() method.
     }
