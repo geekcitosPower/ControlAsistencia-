@@ -22,7 +22,7 @@ class Trabajador
         return $this->idUsuario;
     }
     
-     public function setId_usuario($idUsuario)
+     public function setIdUsuario($idUsuario)
     {
         $this->idUsuario =$idUsuario;
     }
