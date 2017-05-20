@@ -8,10 +8,12 @@
  */
 class DAOUsuarioImp implements DAOUsuario
 {
+
     private $conexion;
 
     public function __construct()
     {
+        //include("../../Usuario.php");
         require_once('../confing/Conexion.php');
         $this->conexion= new conexion();
         $this->conexion->conectar();
@@ -21,14 +23,25 @@ class DAOUsuarioImp implements DAOUsuario
     {
         // TODO: Implement login() method.
         $sql="SELECT * FROM Usuario WHERE user='$usuario->getUser()' AND pass='$usuario->getPass()'";
-        $result=$this->conexion->conexion->query($sql);
-        if ($result->num_rows > 0) {
-            $r=$result->fetch_array(MYSQLI_ASSOC);
-        }else{
-            $r= 0; //"no hay usuario";
+
+        try{
+            $result=$this->conexion->conexion->query($sql);
+            if ($result->num_rows > 0) {
+                $r=$result->fetch_array(MYSQLI_ASSOC);
+                /*$user=
+                $r['idUsuario'];
+                $r['user'];
+                $r['pass'];
+                */
+            }else{
+                $r= 0; //"no hay usuario";
+            }
+            $this->conexion->cerrar();
+            return $r;
+        }catch (Exception $e){
+            return $e;
         }
-        $this->conexion->cerrar();
-        return $r;
+
 
     }
 

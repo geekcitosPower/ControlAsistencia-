@@ -8,8 +8,25 @@
  */
 class Usuario
 {
+    private $idUsuario;
     private $user;
     private $pass;
+
+    /**
+     * @return mixed
+     */
+    public function getIdUsuario()
+    {
+        return $this->idUsuario;
+    }
+
+    /**
+     * @param mixed $idUsuario
+     */
+    public function setIdUsuario($idUsuario)
+    {
+        $this->idUsuario = $idUsuario;
+    }
 
     /**
      * @return mixed
