@@ -30,9 +30,9 @@ class DAOTrabajadorImp implements DAOTrabajador
             $stmt->execute();
             $stmt->close();
 
-            $this->conexion->conexion->close();
+            $this->conexion->cerrar();
         } catch (Exception $e) {
-            $this->conexion->conexion->close();
+            $this->conexion->cerrar();
 
         }
     }
@@ -44,7 +44,7 @@ class DAOTrabajadorImp implements DAOTrabajador
 
     public function mostrarTrabajadores()
     {
-        // TODO: Implement mostraTrabajadores() method.
+        // TODO: Implement mostrarTrabajadores() method.
 
     }
 
