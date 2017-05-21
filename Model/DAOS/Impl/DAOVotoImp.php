@@ -38,6 +38,19 @@ class DAOVotoImp implements DAOVoto
     public function buscarVoto($id)
     {
         // TODO: Implement buscarVoto() method.
+        $sql = "SELECT * FROM Voto WHERE id='$id'";
+        try {
+            $resulatdos = $this->conexion->conexion->query($sql);
+            if ($resulatdos->num_rows > 0) {
+                $r = $resulatdos->fetch_array(MYSQLI_ASSOC);
+            } else {
+                $r = 0; //"no hay usuario";
+            }
+            $this->conexion->cerrar();
+            return $r;
+        } catch (Exception $e) {
+            $this->conexion->cerrar();
+        }
     }
 
     public function mostrarVotos()

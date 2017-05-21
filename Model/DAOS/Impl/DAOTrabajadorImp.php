@@ -40,11 +40,37 @@ class DAOTrabajadorImp implements DAOTrabajador
     public function buscarTrabajador($id)
     {
         // TODO: Implement buscarTrabajador() method.
+        $sql = "SELECT * FROM Trabajador WHERE id='$id'";
+        try {
+            $resulatdos = $this->conexion->conexion->query($sql);
+            if ($resulatdos->num_rows > 0) {
+                $r = $resulatdos->fetch_array(MYSQLI_ASSOC);
+            } else {
+                $r = 0; //"no hay usuario";
+            }
+            $this->conexion->cerrar();
+            return $r;
+        } catch (Exception $e) {
+            $this->conexion->cerrar();
+        }
     }
 
     public function mostrarTrabajadores()
     {
         // TODO: Implement mostrarTrabajadores() method.
+        $sql = "SELECT * FROM Trabajador";
+        try {
+            $result = $this->conexion->conexion->query($sql);
+            $arreglo = array();
+            while ($re = $result->fetch_array(MYSQLI_ASSOC)) {
+                $arreglo[] = $re;
+            }
+            //$json=json_encode($arreglo);
+            return $arreglo;
+            $this->conexion->cerrar();
+        } catch (Exception $e) {
+            $this->conexion->cerrar();
+        }
 
     }
 
