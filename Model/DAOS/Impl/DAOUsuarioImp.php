@@ -20,7 +20,6 @@ class DAOUsuarioImp implements DAOUsuario
     public function guardarUsuario(Usuario $usuario)
     {
         // TODO: Implement guardarUsuario() method.
-
     }
 
     public function buscarUsuario($id)
@@ -44,6 +43,19 @@ class DAOUsuarioImp implements DAOUsuario
     public function mostrarUsuarios()
     {
         // TODO: Implement mostrarUsuarios() method.
+        $sql = "SELECT * FROM Usuario";
+        try {
+            $result = $this->conexion->conexion->query($sql);
+            $arreglo = array();
+            while ($re = $result->fetch_array(MYSQLI_ASSOC)) {
+                $arreglo[] = $re;
+            }
+            //$json=json_encode($arreglo);
+            return $arreglo;
+            $this->conexion->cerrar();
+        } catch (Exception $e) {
+            $this->conexion->cerrar();
+        }
     }
 
     public function actualizarUsuarios($id, Usuario $usuario)

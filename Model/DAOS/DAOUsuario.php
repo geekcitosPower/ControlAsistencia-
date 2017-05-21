@@ -9,12 +9,8 @@
 interface DAOUsuario
 {
     public function guardarUsuario(Usuario $usuario);
-
     public function buscarUsuario($id);
-
     public function mostrarUsuarios();
-
     public function actualizarUsuarios($id, Usuario $usuario);
-
     public function borrarUsuario($id);
 }
