@@ -19,13 +19,7 @@ class BOImp implements BO
 
     private $conexion;
 
-    public function __construct()
-    {
-
-        require_once('../confing/Conexion.php');
-        $this->conexion = new conexion();
-        $this->conexion->conectar();
-    }
+    
 
     public function login(Usuario $usuario)
     {
