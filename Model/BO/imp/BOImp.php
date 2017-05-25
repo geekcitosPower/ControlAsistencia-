@@ -17,7 +17,7 @@ class BOImp implements BO
 {
 
 
-    private $conexion;
+    
 
     
 
