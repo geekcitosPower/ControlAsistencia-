@@ -9,12 +9,8 @@
 interface DAOTrabajador
 {
     public function guardarTrabajador(Trabajador $trabajador, $idU);
-
     public function buscarTrabajador($id);
-
     public function mostrarTrabajadores();
-
     public function actualizarTrabajador($id, Trabajador $trabajador);
-
     public function borrarTrabajador($id);
 }

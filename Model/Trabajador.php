@@ -16,6 +16,23 @@ class Trabajador
     private $genero;
     //private $hora;
     private $idUsuario;
+    //private $voto;
+
+    /**
+     * @return mixed
+     */
+    public function getVoto()
+    {
+        return $this->voto;
+    }
+
+    /**
+     * @param mixed $voto
+     */
+    public function setVoto($voto)
+    {
+        $this->voto = $voto;
+    }
     
      public function getIdUsuario()
     {

@@ -16,18 +16,18 @@ include("../../Voto.php");
 class BOImp implements BO
 {
 
-
-    
-
-    
-
     public function login(Usuario $usuario)
     {
         // TODO: Implement login() method.
         $daoU = new DAOUsuarioImp();
         $result = $daoU->mostrarUsuarios();
-        while ($result->hasNext()) {
-
+        /*while ($result->hasNext()) {
+            
+        }*/
+        foreach ($result as $clave => $valor) {
+            if ($usuario->getPass() == $valor) {
+                return true;
+            }
         }
 
     }
